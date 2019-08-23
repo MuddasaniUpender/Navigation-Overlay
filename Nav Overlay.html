@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Navg</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<style type="text/css">
+		.overlay{
+			width:0%;
+			height: 100%;
+			position: fixed;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			background-color: #ececea;
+			opacity: 0.8;
+			overflow-x: hidden;
+			transition: 0.5s;
+		}
+		.overlay-content{
+			position: relative;
+			top: 25%;
+			width: 100%;
+			text-align: center;
+			margin-top: 30px;
+			display: block
+		}
+		.overlay>a{
+			padding: 8px;
+			text-decoration: none;
+			font-size: 36px;
+			color: #818181;
+			display: block;
+			transition: 0.3s;
+		}
+		.overlay>a:hover, .overlay>a:focus{
+			color:#f1f1f1;
+		}
+		.overlay>.closebtn{
+			position: absolute;
+			top: 1px;
+			left: 1px;
+			font-size: 60px;
+		}
+		@media screen and (max-height: 450px){
+			.overlay>a{
+				font-size: 20px;
+				display: block
+			}
+			.overlay>.closebtn{
+				font-size: 40px;
+				top: 15px;
+				left: 35px;
+			}
+		}
+		#cc:hover{
+			cursor: pointer;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="overlay" id="myNav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+		<div class="overlay-content">
+			<a href="javascript:void(0)">About</a>
+			<a href="javascript:void(0)">Services</a>
+			<a href="javascript:void(0)">Clients</a>
+			<a href="javascript:void(0)">Contact</a>
+		</div>
+	</div>
+
+	<span style="font-size: 30px;" id="cc" onclick="openNav()">&#9776;</span>
+
+	<script type="text/javascript">
+			
+		function openNav(){
+			document.getElementById("myNav").style.width = "100%";
+			document.getElementById("cc").style.display="none";
+		}
+		function closeNav(){
+			document.getElementById("myNav").style.width="0%";
+			document.getElementById("cc").style.display="block";
+		}
+
+	</script>
+</body>
+</html>
